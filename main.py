@@ -3,7 +3,7 @@
 import calc
 
 # take input from the user
-expression = str(input("Enter your math expression in the format 'x operation y': "))
+expression = str(input("Enter your math expression separated by spaces, in the format 'x operation y': "))
 my_list = expression.split()
 number_1 = my_list[0]
 number_2 = my_list[2]
