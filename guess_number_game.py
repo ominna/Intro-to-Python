@@ -7,7 +7,6 @@ answer = "no"
 
 while answer == "no":
     x = random.choice(numbers)
-    print(x)
     print("Is", x, "the number?")
     attempts += 1
     numbers.pop(x)
