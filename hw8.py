@@ -7,8 +7,7 @@ def cinderella(mixed_cereals:list, pattern: str) -> list:
     :return: список, содержащий все элементы, подходящие под паттерн
     '''
 
-    result = filter(lambda x: x == pattern, mixed_cereals)
-    return(list(result))
+    return list(filter(lambda x: x == pattern, mixed_cereals))
 
 def check_cinderella():
     assert cinderella(['мак', 'просо', 'мак', 'пшеница', 'пшеница', 'пшеница'], 'мак') == ['мак', 'мак']
@@ -28,11 +27,9 @@ def even_numbers(list_of_numbers: list, check_even: bool) -> list:
     :param check_even: флаг проверки четных чисел (True - проверяем четные, False - нечетные)
     :return: список четных чисел
     '''
-    if check_even == True:
-        result = filter(lambda x: x % 2 == 0, list_of_numbers)
-    else:
-        result = filter(lambda x: x % 2 != 0, list_of_numbers)
-    return (list(result))
+    if check_even:
+        return list(filter(lambda x: x % 2 == 0, list_of_numbers))
+    return list(filter(lambda x: x % 2 == 1, list_of_numbers))
 
 
 def check_even_numbers():
@@ -46,26 +43,18 @@ def check_even_numbers():
 check_even_numbers()
 
 
-def secret_names(real_names: list, secret_names1: list):
-    '''
-    С помощью Map реализовать функцию, которая присваивает реальному имени - кодовое имя.
-    Для реализации выбора кодового имени использовать random.choice()
-    :param real_names: список реальных имен
-    :param secret_names1: список кодовых имен
-    :return: список кодовых имен (равное количество реальных)
-    Проверочную функцию здесь не делаю, просто буду запускать ваш код
-    '''
+def secret_names(real_names: list, secret_names: list):
+        '''
+        С помощью Map реализовать функцию, которая присваивает реальному имени - кодовое имя.
+        Для реализации выбора кодового имени использовать random.choice()
+        :param real_names: список реальных имен
+        :param secret_names: список кодовых имен
+        :return: список кодовых имен (равное количество реальных)
+        Проверочную функцию здесь не делаю, просто буду запускать ваш код
+        '''
 
-    # Я переименовала параметр secret_names в secret_names1
-
-    import random
-    result = []
-    for name in real_names:
-        x = random.choice(secret_names1)
-        result.append(x)
-        secret_names1.remove(x)
-    return result
-
+        import random
+        return list(map(lambda name: "'" + random.choice(secret_names) + "'", real_names))
 
 print(*secret_names(['Iren', 'Alex'], ['Agent Carter', 'Hulk', 'IronMan']))
 print(*secret_names(['Iren', 'Alex', 'Ann'], ['Flash', 'Wonder Woman', 'Harley Queen', 'Batman', 'Joker']))
