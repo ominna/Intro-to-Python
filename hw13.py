@@ -1,4 +1,4 @@
-# This program reads numbers from file in.txt, sorts them in ascending order and writes them into file out.txt
+# This program reads numbers from in.txt, sorts them in ascending order and writes them into out.txt
 
 # Reading the numbers from in.txt
 path = "./in.txt"
