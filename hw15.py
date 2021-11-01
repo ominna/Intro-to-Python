@@ -1,11 +1,9 @@
 import math
 
 class Figure():
-    def square(self):
+    def area(self):
         pass
-    def triangle(self):
-        pass
-    def circle(self):
+    def perimeter(self):
         pass
 
 class Square(Figure):
